@@ -2,8 +2,8 @@
   "name": "2048",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/ivancivanovbg/2048.git",
-  "author": "Ivan Ivanov <ivancivanov@outlook.com>",
+  "repository": "https://github.com/ivanovx/2048.git",
+  "author": "Ivan Ivanov",
   "license": "MIT",
   "private": true,
   "scripts": {
