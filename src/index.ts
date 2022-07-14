@@ -29,4 +29,4 @@ container.bind<HtmlActuator>(TYPES.HtmlActuator).to(HtmlActuator).inSingletonSco
 container.bind<KeyboardInputManager>(TYPES.KeyboardInputManager).to(KeyboardInputManager).inSingletonScope();
 container.bind<LocalStorageManager>(TYPES. LocalStorageManager).to(LocalStorageManager).inSingletonScope();
 
-container.resolve(Game).run();
+window.requestAnimationFrame(() => container.resolve(Game).run());
