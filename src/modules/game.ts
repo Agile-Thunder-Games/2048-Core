@@ -13,9 +13,6 @@ import { inject, injectable } from "inversify";
 
 @injectable()
 export default class Game {
-   // private size: number;
-
-    //private startTiles: number;
     private over: boolean;
     private won: boolean;
     private isPlaying: boolean;

@@ -29,6 +29,27 @@ body {
     font-size: 18px;
 }
 
+p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    line-height: 1.65;
+}
+
+a {
+    color: rgb(0, 113, 188);
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid #d8d4d0;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+
 .container {
     position: absolute;
     left: 50%;
@@ -87,28 +108,8 @@ body {
     content: "Рекорд";
 }
 
-p {
-    margin-top: 0;
-    margin-bottom: 10px;
-    line-height: 1.65;
-}
-
-a {
-    color: rgb(0, 113, 188);
-    font-weight: bold;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-strong.important {
+.important {
     text-transform: uppercase;
-}
-
-hr {
-    border: none;
-    border-bottom: 1px solid #d8d4d0;
-    margin-top: 20px;
-    margin-bottom: 30px;
 }
 
 .game-container {
