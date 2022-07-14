@@ -8,7 +8,7 @@ import KeyboardInputManager from "./keyboardInputManager";
 
 import { Position, Traversal } from "./types";
 
-import { TYPES } from "./types";
+import { Types } from "./types";
 import { inject, injectable } from "inversify";
 
 @injectable()
@@ -19,13 +19,13 @@ export default class Game {
     private grid: Grid;
     private score: number;
 
-    private readonly size = 4;
-    private readonly startCells = 2;
+    private readonly size: number = 4;
+    private readonly startCells: number = 2;
 
     constructor(
-        @inject(TYPES.HtmlActuator) private readonly actuator: HtmlActuator,
-        @inject(TYPES.KeyboardInputManager) private readonly input: KeyboardInputManager, 
-        @inject(TYPES.LocalStorageManager) private readonly storage: LocalStorageManager,
+        @inject(Types.HtmlActuator) private readonly actuator: HtmlActuator,
+        @inject(Types.KeyboardInputManager) private readonly input: KeyboardInputManager, 
+        @inject(Types.LocalStorageManager) private readonly storage: LocalStorageManager,
     ) {}
 
     public run(): void {

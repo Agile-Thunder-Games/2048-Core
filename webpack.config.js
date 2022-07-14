@@ -3,14 +3,15 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    devtool: "inline-source-map",
+    //mode: "production", 
+    //devtool: "inline-source-map",
     entry: path.join(__dirname, 'src', 'index.ts'),
     devServer: {
-        hot: true,
-        contentBase: path.join(__dirname, 'dist'),
-        publicPath: '/',
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
         compress: true,
-        port: 9000,
+        port: 5000,
     },
     watchOptions: {
         ignored: /node_modules/
@@ -23,7 +24,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.ts?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/
             },
@@ -31,29 +32,8 @@ module.exports = {
                 test: /\.css$/i,
                 exclude: /node_modules/,
                 use: [
-                    {
-                        loader: "style-loader"
-                    },
-                    {
-                        loader: "css-loader",
-                        options: {
-                            sourceMap: true,
-                            importLoaders: 1
-                        }
-                    },
-                    {
-                        loader: "postcss-loader",
-                        options: {
-                            postcssOptions: {
-                                plugins: [
-                                    'autoprefixer',
-                                    'postcss-import',
-                                    'postcss-nesting',
-                                    'postcss-custom-properties',
-                                ]
-                            }
-                        }
-                    },
+                    "style-loader",
+                    "css-loader"
                 ]
             }
         ],

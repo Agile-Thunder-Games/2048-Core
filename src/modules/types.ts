@@ -16,9 +16,16 @@ export type Metadata = {
     won: boolean;
 }
 
-export const TYPES = {
+/*export const TYPES = {
     Game: Symbol.for('Game'),
     HtmlActuator: Symbol.for('HtmlActuator'),
     KeyboardInputManager: Symbol.for('KeyboardInputManager'),
     LocalStorageManager: Symbol.for('LocalStorageManager'),
-};
+};*/
+
+export enum Types {
+    Game = "Game",
+    HtmlActuator = "HtmlActuator",
+    KeyboardInputManager = "KeyboardInputManager",
+    LocalStorageManager = "LocalStorageManager",
+}

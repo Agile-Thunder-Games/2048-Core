@@ -3,30 +3,17 @@ import './css/game-mobile.css';
 
 import Game from "./modules/game";
 import HtmlActuator from "./modules/htmlActuator";
-import KeyboardInputManager from "./modules/keyboardInputManager";
 import LocalStorageManager from "./modules/localStorageManager";
-/*
-const size: number = 4;
-const inputManager: KeyboardInputManager = new KeyboardInputManager();
-const storageManager: LocalStorageManager = new LocalStorageManager();
-const actuator: HtmlActuator = new HtmlActuator();*/
+import KeyboardInputManager from "./modules/keyboardInputManager";
 
 import { Container } from "inversify";
-import { TYPES } from "./modules/types";
-
-/*
-window.requestAnimationFrame(() : void => {
-    //const game  = new Game(inputManager, storageManager, actuator);
-
-   // game.run();
-});
-*/
+import { Types } from "./modules/types";
 
 const container = new Container();
 
-container.bind<Game>(TYPES.Game).to(Game).inSingletonScope();
-container.bind<HtmlActuator>(TYPES.HtmlActuator).to(HtmlActuator).inSingletonScope();
-container.bind<KeyboardInputManager>(TYPES.KeyboardInputManager).to(KeyboardInputManager).inSingletonScope();
-container.bind<LocalStorageManager>(TYPES. LocalStorageManager).to(LocalStorageManager).inSingletonScope();
+container.bind<Game>(Types.Game).to(Game).inSingletonScope();
+container.bind<HtmlActuator>(Types.HtmlActuator).to(HtmlActuator).inSingletonScope();
+container.bind<KeyboardInputManager>(Types.KeyboardInputManager).to(KeyboardInputManager).inSingletonScope();
+container.bind<LocalStorageManager>(Types.LocalStorageManager).to(LocalStorageManager).inSingletonScope();
 
 window.requestAnimationFrame(() => container.resolve(Game).run());
