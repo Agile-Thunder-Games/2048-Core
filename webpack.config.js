@@ -1,11 +1,17 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    //mode: "production", 
-    //devtool: "inline-source-map",
+    mode: "production", 
+    target: "web",
     entry: path.join(__dirname, 'src', 'index.ts'),
+    resolve: {
+        extensions: ['.ts', '.js', '.css'],
+    },
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+    },
     devServer: {
         static: {
             directory: path.join(__dirname, 'dist'),
@@ -19,7 +25,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'index.html')
-        }),
+        })
     ],
     module: {
         rules: [
@@ -37,12 +43,5 @@ module.exports = {
                 ]
             }
         ],
-    },
-    resolve: {
-        extensions: ['.ts', '.js', '.css'],
-    },
-    output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'),
-    },
+    }
 };
