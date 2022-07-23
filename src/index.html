@@ -8,32 +8,29 @@
         <title>2048 | Created and maintained by Ivan Ivanov</title>
     </head>
     <body>
-        <div class="container">
-            <header class="heading">
-                <div class="scores-container">
-                    <div class="score-container">0</div>
-                    <div class="best-container">0</div>
+       <header role="banner">
+            <div class="scores-container">
+                <div class="score-container">0</div>
+                <div class="best-container">0</div>
+            </div>
+            <div class="above-game">
+                <button class="restart-button">Нова игра</button>
+            </div>
+        </header>
+        <main class="game-container">
+            <div class="game-message">
+                <p class="message"></p>
+                <div class="lower">
+                    <a href="#" class="keep-playing-button">Продължи</a>
+                    <a href="#" class="retry-button">Опитай отново</a>
                 </div>
-                <div class="above-game">
-                    <a href="#" class="restart-button">Нова игра</a>
-                </div>
-            </header>
+            </div>
+            <div class="grid-container"></div>
+            <div class="tile-container"></div>
+        </main>
 
-            <main class="game-container">
-                <div class="game-message">
-                    <p class="message"></p>
-                    <div class="lower">
-                       <a href="#" class="keep-playing-button">Продължи</a>
-                       <a href="#" class="retry-button">Опитай отново</a>
-                    </div>
-                </div>
-                <div class="grid-container"></div>
-                <div class="tile-container"></div>
-            </main>
-
-            <footer class="footer">
-                (c) <a href="https://www.ivanov.pro">Ivan Ivanov</a>
-            </footer>
-        </div>
+        <!-- <footer class="footer">
+                    (c) <a href="https://www.ivanov.pro">Ivan Ivanov</a>
+                </footer> -->
     </body>
 </html>
