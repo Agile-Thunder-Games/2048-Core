@@ -1,11 +1,9 @@
 {
   "name": "2048",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "https://github.com/ivanovx/2048.git",
   "author": "Ivan Ivanov",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "build": "webpack",
     "watch": "webpack watch",
