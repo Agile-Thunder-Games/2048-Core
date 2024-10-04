@@ -13,16 +13,9 @@ export default class KeyboardInputManager {
     public constructor() {
         this.events = [];
 
-      //  if (window.navigator.msPointerEnabled) {
-            //Internet Explorer 10 style
-       //     this.eventTouchStart = "MSPointerDown";
-       //     this.eventTouchMove = "MSPointerMove";
-       //     this.eventTouchEnd = "MSPointerUp";
-      //  } else {
-            this.eventTouchStart = "touchstart";
-            this.eventTouchMove = "touchmove";
-            this.eventTouchEnd = "touchend";
-      //  }
+        this.eventTouchStart = "touchstart";
+        this.eventTouchMove = "touchmove";
+        this.eventTouchEnd = "touchend";
 
         this.listen();
     }
@@ -85,14 +78,9 @@ export default class KeyboardInputManager {
         let touchStartClientY: number;
         let gameContainer: Element = document.querySelector(".game-container");
 
-        gameContainer.addEventListener(this.eventTouchStart, (event: TouchEvent | any): void => {
-            // if (window.navigator.msPointerEnabled) {
-           //     touchStartClientX = event.pageX;
-          //      touchStartClientY = event.pageY;
-          //  } else {
-                touchStartClientX = event.touches[0].clientX;
-                touchStartClientY = event.touches[0].clientY;
-          //  }
+        gameContainer.addEventListener(this.eventTouchStart, (event: TouchEvent): void => {
+            touchStartClientX = event.touches[0].clientX;
+            touchStartClientY = event.touches[0].clientY;
 
             event.preventDefault();
         });
@@ -103,13 +91,8 @@ export default class KeyboardInputManager {
             let touchEndClientX: number;
             let touchEndClientY: number;
 
-           // if (window.navigator.msPointerEnabled) {
-           //     touchEndClientX = event.pageX;
-           //     touchEndClientY = event.pageY;
-          //  } else {
-                touchEndClientX = event.changedTouches[0].clientX;
-                touchEndClientY = event.changedTouches[0].clientY;
-          //  }
+            touchEndClientX = event.changedTouches[0].clientX;
+            touchEndClientY = event.changedTouches[0].clientY;
 
             let dx: number = touchEndClientX - touchStartClientX;
             let absDx: number = Math.abs(dx);
