@@ -2,8 +2,10 @@
     --blue: rgb(0, 113, 188);
     --white: rgb(248, 248, 248);
 
-    --width: 475px;
-    --heigh: var(--width);
+    --size: 475px;
+
+    --width: var(--size);
+    --heigh: var(--size);
 
     --tile-color: var(--white);
     --tile-4-background: var(--white);
@@ -16,7 +18,7 @@
     --tile-512-background:  rgb(23, 35, 61);
     --tile-1024-background: rgb(255, 121, 25);
     --tile-2048-background:  rgb(200, 83, 0);
-    --tile-super-backgroud:  #38362f;
+    --tile-super-backgroud:  rgb(56, 54, 47);
 }
 
 html, body {

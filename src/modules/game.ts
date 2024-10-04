@@ -95,7 +95,9 @@ export default class Game {
     }
 
     private actuate() {
-        if (this.storage.bestScore < this.score) {
+        const bestScore = this.storage.bestScore as number;
+
+        if (bestScore < this.score) {
             this.storage.bestScore = this.score;
         }
 

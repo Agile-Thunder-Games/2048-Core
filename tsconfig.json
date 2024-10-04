@@ -1,11 +1,11 @@
 {
     "compilerOptions": {
         "outDir": "dist/js",
-        "target": "ES2020",
-        "module": "ES2020",
-        "lib": ["ES2020","DOM", "DOM.Iterable"],
+        "target": "ESNext",
+        "module": "NodeNext",
+        "lib": ["ESNext", "DOM", "DOM.Iterable"],
         "sourceMap": false,
-        "moduleResolution": "node",
+        "moduleResolution": "NodeNext",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "suppressImplicitAnyIndexErrors": false,
