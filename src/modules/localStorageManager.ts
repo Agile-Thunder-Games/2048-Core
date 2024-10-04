@@ -2,22 +2,16 @@ import { injectable } from "inversify";
 
 @injectable()
 export default class LocalStorageManager {
-    private readonly bestScoreKey: string;
-    private readonly gameStateKey: string;
-    private readonly storage: Storage;
-
-    public constructor() {
-        this.bestScoreKey = "bestScore";
-        this.gameStateKey = "gameState";
-        this.storage = window.localStorage;
-    }
+    private readonly bestScoreKey: string = "bestScore";
+    private readonly gameStateKey: string = "gameState";
+    private readonly storage: Storage  = window.localStorage;
 
     public clearGameState(): void {
         this.storage.removeItem(this.gameStateKey);
     }
 
-    public get bestScore() : string | number {
-        return this.storage.getItem(this.bestScoreKey) || 0;
+    public get bestScore() : number {
+        return Number.parseInt(this.storage.getItem(this.bestScoreKey)) || 0;
     }
 
     public set bestScore(value : string | number) {
@@ -25,9 +19,9 @@ export default class LocalStorageManager {
     }
 
     public get gameState() : any {
-        let jsonState: string = this.storage.getItem(this.gameStateKey);
+        const jsonState: string = this.storage.getItem(this.gameStateKey);
 
-        if(jsonState) {
+        if (jsonState) {
             return JSON.parse(jsonState);
         } else {
             return null;

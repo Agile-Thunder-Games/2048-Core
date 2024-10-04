@@ -5,18 +5,13 @@ import "reflect-metadata";
 
 @injectable()
 export default class KeyboardInputManager {
-    private events: string[];
-    private eventTouchStart: string;
-    private eventTouchMove: string;
-    private eventTouchEnd: string;
+    private events: string[] = [];
+
+    private readonly eventTouchStart: string = "touchstart";
+    private readonly eventTouchMove: string  = "touchmove";
+    private readonly eventTouchEnd: string = "touchend";
 
     public constructor() {
-        this.events = [];
-
-        this.eventTouchStart = "touchstart";
-        this.eventTouchMove = "touchmove";
-        this.eventTouchEnd = "touchend";
-
         this.listen();
     }
 
