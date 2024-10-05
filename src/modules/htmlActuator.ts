@@ -19,7 +19,7 @@ export default class HtmlActuator {
         this.createCells();
     }
 
-    public createCells(): void {
+    private createCells(): void {
         let gridRow: Element;
 	    let gridCell: Element;
 
@@ -43,8 +43,8 @@ export default class HtmlActuator {
         window.requestAnimationFrame((): void => {
             this.clearContainer(this.tileContainer);
 
-            for(let column of grid.cells) {
-                for(let cell of column) {
+            for (let column of grid.cells) {
+                for (let cell of column) {
                     if (cell) {
                         this.addTile(cell);
                     }
@@ -55,7 +55,7 @@ export default class HtmlActuator {
             this.updateBestScore(metadata.bestScore);
 
             if (metadata.terminated) {
-                if(metadata.won) {
+                if (metadata.won) {
                     this.message(true);
                 } else {
                     this.message(false);
@@ -88,7 +88,7 @@ export default class HtmlActuator {
         this.applyClasses(wrapper, classes);
 
         inner.classList.add("tile-inner");
-        inner.innerHTML = tile.value.toString() as string;
+        inner.innerHTML = tile.value.toString();
 
         if (tile.previousPosition) {
             window.requestAnimationFrame((): void => {
@@ -137,12 +137,13 @@ export default class HtmlActuator {
 
     public updateScore(score: number): void {
         this.clearContainer(this.scoreContainer);
+
         this.score = score;
-        this.scoreContainer.innerHTML = this.score.toString() as string;
+        this.scoreContainer.innerHTML = this.score.toString();
     }
 
     public updateBestScore(bestScore: number | string): void {
-        this.bestContainer.innerHTML = bestScore.toString() as string;
+        this.bestContainer.innerHTML = bestScore.toString();
     }
 
     public message(won: boolean): void {

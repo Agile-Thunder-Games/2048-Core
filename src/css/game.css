@@ -2,6 +2,8 @@
     --blue: rgb(0, 113, 188);
     --white: rgb(248, 248, 248);
 
+    --background: var(--blue); 
+
     --size: 475px;
 
     --width: var(--size);
@@ -106,11 +108,11 @@ hr {
 }
 
 .score-container:after {
-    content: "Резултат";
+    content: "Result";
 }
 
 .best-container:after {
-    content: "Рекорд";
+    content: "Record";
 }
 
 .important {
@@ -118,24 +120,6 @@ hr {
 }
 
 .game-container {
-    --background: rgb(0, 113, 188); 
-   /* margin-top: 1em;
-    padding: 0.85em;
-    cursor: default;
-    -webkit-touch-callout: none;
-    -ms-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -ms-touch-action: none;
-    user-select: none;
-    touch-action: none;
-    background: rgb(0, 113, 188);
-    width: var(--width);
-    height: var(--heigh);
-    border-radius: 3.5rem;    
-    display: block;*/
-
     display: block;
     margin: 1.25rem auto;
     padding: 0.85rem;
@@ -200,7 +184,6 @@ hr {
 .game-container .game-message.game-over {
     display: block;
 }
-
 
 .grid-container {
     position: absolute;
@@ -643,6 +626,8 @@ hr {
     color: white;
     line-height: 45px;
     text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
 }
 
 .game-explanation {

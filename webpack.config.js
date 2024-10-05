@@ -25,7 +25,6 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             minify: true,
-            xhtml: true,
             template: path.join(__dirname, 'src', 'index.html')
         })
     ],

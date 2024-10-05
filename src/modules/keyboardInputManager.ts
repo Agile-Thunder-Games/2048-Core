@@ -23,7 +23,7 @@ export default class KeyboardInputManager {
         this.events[event].push(callback);
     }
 
-    public emit(event: string, data: any): void {
+    private emit(event: string, data: any): void {
         let callbacks: Function[] = this.events[event];
 
         if (callbacks) {
@@ -33,7 +33,7 @@ export default class KeyboardInputManager {
         }
     }
 
-    public listen(): void {
+    private listen(): void {
         let direction: Direction;
 
         document.addEventListener("keydown", (event: KeyboardEvent): void => {

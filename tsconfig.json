@@ -3,7 +3,7 @@
         "outDir": "dist/js",
         "target": "ESNext",
         "module": "NodeNext",
-        "lib": ["ESNext", "DOM", "DOM.Iterable"],
+        "lib": ["ESNext", "DOM", "DOM.Iterable", "ES2015.Reflect"],
         "sourceMap": false,
         "moduleResolution": "NodeNext",
         "experimentalDecorators": true,
